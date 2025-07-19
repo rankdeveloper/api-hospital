@@ -4,14 +4,14 @@ import dotEnv from "dotenv";
 import patientRouter from "./routes/patient";
 import doctorRouter from "./routes/doctor";
 import appointmentRouter from "./routes/appointment";
-import { connectDB } from "./config/connectDB";
+import { connectDB, pool } from "./config/connectDB";
 
 dotEnv.config();
 
 const app = express();
 app.use(cors());
 app.use(express.json());
-connectDB();
+// connectDB();
 
 app.use("/patients", patientRouter);
 app.use("/doctors", doctorRouter);
